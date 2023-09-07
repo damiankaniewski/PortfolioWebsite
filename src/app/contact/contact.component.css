@@ -1,0 +1,61 @@
+#contact {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-container {
+    display: flex;
+    font-size: 100px;
+}
+.title-container h1 {
+    text-align: center;
+    margin-top: 15px;    
+    margin-bottom: 40px;
+}
+
+.contact-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.contact-icons img {
+    width: 250px;
+    height: auto;
+}
+
+#facebook, #linkedIn, #github, #email {
+    opacity: 50%;
+    transform: scale(1.0);
+    filter: grayscale(70%);
+    transition: opacity 0.3s, transform 0.5s, filter 0.5s;
+}
+
+#facebook:hover {
+    opacity: 100%;
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+#linkedIn:hover {
+    opacity: 100%;
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+#github:hover{
+    opacity: 100%;
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+#email:hover {
+    opacity: 100%;
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+

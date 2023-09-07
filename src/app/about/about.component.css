@@ -1,0 +1,58 @@
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 128px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  background-image: url(../../assets/images/me-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  padding-top: 300px;
+  padding-bottom: 300px;
+  width: auto;
+}
+
+.game-development,
+.software-engineering,
+.web-development {
+  flex: 1;
+  text-align: center;
+  padding: 30px;
+  overflow: hidden;
+  position: relative;
+
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+
+.game-development img,
+.software-engineering img,
+.web-development img {
+  width: 50%;
+  max-width: 50%;
+  height: auto;
+  padding-bottom: 50px;
+}
+
+/* Dodaj styl do paragrafów pod obrazkami */
+.game-development p,
+.software-engineering p,
+.web-development p {
+  margin-top: 10px; /* Dodaj odstęp między obrazkiem a tekstem */
+  font-size: 24px;
+}
+
+.game-development.animate,
+.software-engineering.animate,
+.web-development.animate {
+  opacity: 1;
+}

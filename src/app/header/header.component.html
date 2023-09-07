@@ -1,0 +1,12 @@
+<nav class="header" [ngClass]="{'portfolio-active': activeSection === 'portfolio' || activeSection === 'contact'}">
+    <div class="left-links">
+      <a class="home cursor-pointer" [class.active]="activeSection === 'home'" (click)="scrollToSection('home')">Home</a>
+      <a class="about cursor-pointer" [class.active]="activeSection === 'about'" (click)="scrollToSection('about')">About</a>
+      <a class="skills cursor-pointer" [class.active]="activeSection === 'skills'" (click)="scrollToSection('skills')">Skills</a>
+      <a class="portfolio cursor-pointer" [class.active]="activeSection === 'portfolio'" (click)="scrollToSection('portfolio')">Portfolio</a>
+    </div>
+    <div class="right-links">
+      <a class="contact cursor-pointer" [class.active]="activeSection === 'contact'" (click)="scrollToSection('contact')">Contact</a>
+    </div>
+  </nav>
+  
