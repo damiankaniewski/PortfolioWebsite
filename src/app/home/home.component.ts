@@ -10,7 +10,7 @@ export class HomeComponent {
   
   constructor(private responsiveService: ResponsiveService) {};
 
-  scrolledPercentage = 0;
+  imageScale = 0;
   isSmallScreen = false;
 
   ngOnInit() {
@@ -44,6 +44,6 @@ export class HomeComponent {
     const scrollY = window.scrollY;
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight;
-    this.scrolledPercentage = (scrollY / (documentHeight - windowHeight)) * 100; 
+    this.imageScale = Math.min(0.1, Math.abs((scrollY / (documentHeight - windowHeight)) * 100)); 
   }
 }
