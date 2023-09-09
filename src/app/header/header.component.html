@@ -1,12 +1,21 @@
-<nav class="header" [ngClass]="{'portfolio-active': activeSection === 'portfolio' || activeSection === 'contact'}">
-    <div class="left-links">
-      <a class="home cursor-pointer" [class.active]="activeSection === 'home'" (click)="scrollToSection('home')">Home</a>
-      <a class="about cursor-pointer" [class.active]="activeSection === 'about'" (click)="scrollToSection('about')">About</a>
-      <a class="skills cursor-pointer" [class.active]="activeSection === 'skills'" (click)="scrollToSection('skills')">Skills</a>
-      <a class="portfolio cursor-pointer" [class.active]="activeSection === 'portfolio'" (click)="scrollToSection('portfolio')">Portfolio</a>
-    </div>
-    <div class="right-links">
-      <a class="contact cursor-pointer" [class.active]="activeSection === 'contact'" (click)="scrollToSection('contact')">Contact</a>
-    </div>
-  </nav>
-  
+<nav *ngIf="!isSmallScreen" class="large-screen-content" [ngClass]="{'portfolio-active': activeSection === 'portfolio' || activeSection === 'contact'}">
+  <div class="left-links">
+    <a class="home" [class.active]="activeSection === 'home'" (click)="scrollToSection('home')">Home</a>
+    <a class="about" [class.active]="activeSection === 'about'" (click)="scrollToSection('about')">About</a>
+    <a class="skills" [class.active]="activeSection === 'skills'" (click)="scrollToSection('skills')">Skills</a>
+    <a class="portfolio" [class.active]="activeSection === 'portfolio'" (click)="scrollToSection('portfolio')">Portfolio</a>
+  </div>
+  <div class="right-links">
+    <a class="contact" [class.active]="activeSection === 'contact'" (click)="scrollToSection('contact')">Contact</a>
+  </div>
+</nav>
+
+<nav *ngIf="isSmallScreen" class="small-screen-content" [ngClass]="{'portfolio-active': activeSection === 'portfolio' || activeSection === 'contact'}">
+  <div class="links">
+    <a class="home" [class.active]="activeSection === 'home'" (click)="scrollToSection('home')"><i class="fa fa-home"></i></a>
+    <a class="about" [class.active]="activeSection === 'about'" (click)="scrollToSection('about')"><i class="fa fa-user"></i></a>
+    <a class="skills" [class.active]="activeSection === 'skills'" (click)="scrollToSection('skills')"><i class="fa fa-code"></i></a>
+    <a class="portfolio" [class.active]="activeSection === 'portfolio'" (click)="scrollToSection('portfolio')"><i class="fa fa-briefcase"></i></a>
+    <a class="contact" [class.active]="activeSection === 'contact'" (click)="scrollToSection('contact')"><i class="fa fa-envelope"></i></a>
+  </div>
+</nav>

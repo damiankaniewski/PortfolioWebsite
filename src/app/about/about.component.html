@@ -1,23 +1,64 @@
-<section id="about" class="about-section">
+<section *ngIf="!isSmallScreen" id="about" class="large-about-section">
   <div class="title">What am I doing?</div>
   <div class="container">
     <div class="container-item">
       <div class="web-development" [ngClass]="{'animate': isWebDevelopmentAnimated}">
-        <img src="../../assets/images/weblogos.png" alt="web">
+        <img src="assets/images/weblogos.png" alt="web">
         <p>My interest in web development is relatively recent, but I believe I've made significant progress in this field. I've worked with several frameworks, starting from building my own small framework using PHP, then moving on to .Net Razor on the frontend.<br><br>Currently, I work on full-stack projects using NestJS on the backend and Angular on the frontend.</p>
       </div> 
     </div>
     <div class="container-item">
       <div class="software-engineering" [ngClass]="{'animate': isSoftwareEngineeringAnimated}">
-        <img src="../../assets/images/softwarelogos.png" alt="software">
+        <img src="assets/images/softwarelogos.png" alt="software">
         <p>During my studies and work, I had the opportunity to develop numerous desktop applications, involving various frameworks such as Windows Forms and Swing. My primary programming languages were C#, C++, Java, and Python. <br><br>My applications encompassed mathematical computations, where I applied design patterns and adhered to general design and programming standards.</p>
       </div>
     </div>
     <div class="container-item">
       <div class="game-development"  [ngClass]="{'animate': isGameDevelopmentAnimated}">
-        <img src="../../assets/images/unitylogo.png" alt="unity">
+        <img src="assets/images/unitylogo.png" alt="unity">
         <p>I have been programming in Unity for over three years. I began with simple games, including platformers and ball games, gradually acquiring the fundamentals necessary to create 3D projects and more sophisticated experiences.<br><br> My primary focus lies in the development of strategic and economic games, closely intertwined with mathematics, computations, and algorithms.</p>
       </div>
     </div>
   </div>
 </section>
+
+<section *ngIf="isSmallScreen" id="about" class="large-about-section">
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ <h1>about</h1>
+ 
+</section>
+

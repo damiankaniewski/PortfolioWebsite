@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { ResponsiveService } from '../responsiveService/responsive.service';
 
 @Component({
   selector: 'app-home',
@@ -6,9 +7,18 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  
+  constructor(private responsiveService: ResponsiveService) {};
+
   scrolledPercentage = 0;
+  isSmallScreen = false;
 
   ngOnInit() {
+    this.responsiveService.isSmallScreen$.subscribe(isSmall => {
+      this.isSmallScreen = isSmall;
+      console.log(isSmall);
+    });
+
       setTimeout(() => {
         const textElement = document.querySelector('.main-title');
         if(textElement){

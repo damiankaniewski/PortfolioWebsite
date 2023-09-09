@@ -1,8 +1,9 @@
-<section id="skills" class="skills">
-    <input type="text" class="title" [value]="inputValue" [ngClass]="{'hide-text': !showText, 'show-text': showText}" (input)="onInputChange($event)">
+<section id="skills" class="skills" [ngClass]="isSmallScreen ? 'small-skills' : 'large-skills'">
+    <input *ngIf="!isSmallScreen" type="text" class="title" [value]="inputValue" [ngClass]="{'hide-text': !showText, 'show-text': showText}" (input)="onInputChange($event)">
+    <h1 *ngIf="isSmallScreen" class="title">What are my skills?</h1>
     <div class="container">
         <div class="item">
-            <img src="../../assets/images/angularlogo.png" alt="angular">
+            <img src="assets/images/angularlogo.png" alt="angular">
             <h1>My journey into web development began during my studies in 2022 while working with PHP and writing my own framework. After experimenting with the basics of several technologies, I found that I am most comfortable working with Angular when it comes to frontend development. <br><br>My projects created using Angular are for example this website, the bajecznewypieki.pl website, and a dog breeds catalogue.</h1>
             <div class="skill-level">
                 <div class="level-full angular"></div>
@@ -12,8 +13,9 @@
                 <div class="level"></div>
             </div>
         </div>
+        <img *ngIf="isSmallScreen" src="assets/images/line.png" alt="line" class="line">
         <div class="item">
-            <img src="../../assets/images/nestjslogo.png" alt="nestjs">
+            <img src="assets/images/nestjslogo.png" alt="nestjs">
             <h1>While working on the frontend, I aim to become a full-stack developer, which required me to pick up backend technologies as well. <br><br>Since Angular is my primary framework, a suitable choice for it is NestJS, which I also find very comfortable to work with.</h1>
             <div class="skill-level">
                 <div class="level-full nest"></div>
@@ -23,8 +25,9 @@
                 <div class="level"></div>
             </div>
         </div>
+        <img *ngIf="isSmallScreen" src="assets/images/line.png" alt="line" class="line">
         <div class="item">
-            <img src="../../assets/images/nodejslogo.png" alt="nodejs">
+            <img src="assets/images/nodejslogo.png" alt="nodejs">
             <h1>Right after creating my first project during my studies in PHP without using any frameworks, our next task was to develop a website using frameworks. <br><br>After a brief research, I chose node.js as it was a good fit for my simple project named UnityScripts.</h1>
             <div class="skill-level">
                 <div class="level-full node"></div>
@@ -34,8 +37,9 @@
                 <div class="level"></div>
             </div>
         </div>
+        <img *ngIf="isSmallScreen" src="assets/images/line.png" alt="line" class="line">
         <div class="item">
-            <img src="../../assets/images/cpluspluslogo.png" alt="cplusplus">
+            <img src="assets/images/cpluspluslogo.png" alt="cplusplus">
             <h1>Every student should have a grasp of the basics of this language. My journey with C++ began with my studies. It served as my primary language for learning various programming concepts. <br><br>I wrote numerous small projects in C++, primarily console-based, including a matrix calculator, password generators, and a program for drawing trees.</h1>
             <div class="skill-level">
                 <div class="level-full cplusplus"></div>
@@ -45,8 +49,9 @@
                 <div class="level"></div>
             </div>
         </div>
+        <img *ngIf="isSmallScreen" src="assets/images/line.png" alt="line" class="line">
         <div class="item">
-            <img src="../../assets/images/csharplogo.png" alt="csharp">
+            <img src="assets/images/csharplogo.png" alt="csharp">
             <h1>I learned the C# language in 2021, and that's when my journey with Unity began as well. I have several projects, written in this language, including .NET projects.<br><br> Examples include the Blood Alcohol Content Calculator app, GadgetBlitz website, the game Forgotten Warrior Remastered, and a simple Hello World game.</h1>
             <div class="skill-level">
                 <div class="level-full csharp"></div>
@@ -56,8 +61,9 @@
                 <div class="level"></div>
             </div>
         </div>
+        <img *ngIf="isSmallScreen" src="assets/images/line.png" alt="line" class="line">
         <div class="item">
-            <img src="../../assets/images/unitylogo.png" alt="unity">
+            <img src="assets/images/unitylogo.png" alt="unity">
             <h1>One of my biggest hobbies since childhood has been computer games. For the past few years, I've also been involved in computer game development. <br><br>I've created numerous projects in Unity, such as Negative, Village Defence, and Stocks, which are games available on my GitHub.</h1>
             <div class="skill-level">
                 <div class="level-full unity"></div>
@@ -67,8 +73,9 @@
                 <div class="level"></div>
             </div>
         </div>
+        <img *ngIf="isSmallScreen" src="assets/images/line.png" alt="line" class="line">
         <div class="item">
-            <img src="../../assets/images/javalogo.png" alt="java">
+            <img src="assets/images/javalogo.png" alt="java">
             <h1>One of the next steps in my studies was to learn the Java language, a fully object-oriented language that helped us expand our knowledge of classes and structures.<br><br> I wrote several small projects in it, such as a currency exchange office simulator and a fuel usage calculator.</h1>
             <div class="skill-level">
                 <div class="level-full java"></div>
@@ -78,8 +85,9 @@
                 <div class="level"></div>
             </div>
         </div>
+        <img *ngIf="isSmallScreen" src="assets/images/line.png" alt="line" class="line">
         <div class="item">
-            <img src="../../assets/images/pythonlogo.png" alt="python">
+            <img src="assets/images/pythonlogo.png" alt="python">
             <h1>As I continued to learn different programming languages, I managed to grasp the fundamentals of Python.<br><br> I used Python for various purposes, including artificial intelligence and machine learning-related algorithms.</h1>
             <div class="skill-level">
                 <div class="level-full python"></div>
@@ -89,8 +97,9 @@
                 <div class="level"></div>
             </div>
         </div>
+        <img *ngIf="isSmallScreen" src="assets/images/line.png" alt="line" class="line">
         <div class="item">
-            <img src="../../assets/images/abletonlogo.png" alt="ableton">
+            <img src="assets/images/abletonlogo.png" alt="ableton">
             <h1>Another one of my hobbies is music. I am deeply involved in music production, play multiple instruments, and run my own recording studio.<br><br> I have collaborated with numerous up-and-coming artists, producing and participating in over 100 projects.<br><br>I use Ableton for my music production endeavors.</h1>
             <div class="skill-level">
                 <div class="level-full ableton"></div>
@@ -100,25 +109,44 @@
                 <div class="level"></div>
             </div>
         </div>
+        <img *ngIf="isSmallScreen" src="assets/images/line.png" alt="line" class="line">
     </div>
-    <div class="additional">
+    <div *ngIf="!isSmallScreen" class="additional">
         <h1>Technologies I also worked with:</h1>
         <div class="img-container">
-            <img src="../../assets/images/sqllogo.png" alt="sql">
-            <img src="../../assets/images/golanglogo.png" alt="go">
-            <img src="../../assets/images/blenderlogo.png" alt="blender">
-            <img src="../../assets/images/uelogo.png" alt="ue">
-            <img src="../../assets/images/mongologo.png" alt="mongo">
-            <img src="../../assets/images/dockerlogo.png" alt="docker">
-            <img src="../../assets/images/phplogo.png" alt="php">
+            <img src="assets/images/sqllogo.png" alt="sql">
+            <img src="assets/images/golanglogo.png" alt="go">
+            <img src="assets/images/blenderlogo.png" alt="blender">
+            <img src="assets/images/uelogo.png" alt="ue">
+            <img src="assets/images/mongologo.png" alt="mongo">
+            <img src="assets/images/dockerlogo.png" alt="docker">
+            <img src="assets/images/phplogo.png" alt="php">
         </div>
         <div class="img-container">
-            <img src="../../assets/images/figmalogo.png" alt="figma">
-            <img src="../../assets/images/kalilogo.png" alt="kali">
-            <img src="../../assets/images/photoshoplogo.png" alt="photoshop">
-            <img src="../../assets/images/aftereffectslogo.png" alt="aftereffects">
-            <img src="../../assets/images/autocadlogo.png" alt="autocad">
-            <img src="../../assets/images/3dsmaxlogo.png" alt="3dsmax">
+            <img src="assets/images/figmalogo.png" alt="figma">
+            <img src="assets/images/kalilogo.png" alt="kali">
+            <img src="assets/images/photoshoplogo.png" alt="photoshop">
+            <img src="assets/images/aftereffectslogo.png" alt="aftereffects">
+            <img src="assets/images/autocadlogo.png" alt="autocad">
+            <img src="assets/images/3dsmaxlogo.png" alt="3dsmax">
+        </div>
+    </div>
+    <div *ngIf="isSmallScreen" class="additional">
+        <h1>Technologies I also worked with:</h1>
+        <div class="img-container">
+            <img src="assets/images/sqllogo.png" alt="sql">
+            <img src="assets/images/golanglogo.png" alt="go">
+            <img src="assets/images/blenderlogo.png" alt="blender">
+            <img src="assets/images/uelogo.png" alt="ue">
+            <img src="assets/images/mongologo.png" alt="mongo">
+            <img src="assets/images/dockerlogo.png" alt="docker">
+            <img src="assets/images/phplogo.png" alt="php">
+            <img src="assets/images/figmalogo.png" alt="figma">
+            <img src="assets/images/kalilogo.png" alt="kali">
+            <img src="assets/images/photoshoplogo.png" alt="photoshop">
+            <img src="assets/images/aftereffectslogo.png" alt="aftereffects">
+            <img src="assets/images/autocadlogo.png" alt="autocad">
+            <img src="assets/images/3dsmaxlogo.png" alt="3dsmax">
         </div>
     </div>
 </section>

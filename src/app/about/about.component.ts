@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { ResponsiveService } from '../responsiveService/responsive.service';
 
 @Component({
   selector: 'app-about',
@@ -6,11 +7,19 @@ import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+  constructor(private renderer: Renderer2, private el: ElementRef, private responsiveService: ResponsiveService) {}
+  isSmallScreen = false;
 
   isGameDevelopmentAnimated: boolean = false;
   isSoftwareEngineeringAnimated: boolean = false;
   isWebDevelopmentAnimated: boolean = false;
+
+  ngOnInit(){
+    this.responsiveService.isSmallScreen$.subscribe(isSmall => {
+      this.isSmallScreen = isSmall;
+      console.log(isSmall);
+    });
+  }
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {

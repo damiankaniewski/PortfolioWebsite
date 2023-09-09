@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ResponsiveService } from 'src/app/responsiveService/responsive.service';
 
 @Component({
   selector: 'app-project-card',
@@ -6,6 +7,17 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./project-card.component.css']
 })
 export class ProjectCardComponent {
+  constructor(private responsiveService: ResponsiveService) {};
+
+  isSmallScreen = false;
+
+  ngOnInit(){
+    this.responsiveService.isSmallScreen$.subscribe(isSmall => {
+      this.isSmallScreen = isSmall;
+      console.log(isSmall);
+    });
+  }
+
   @Input()
   public photoUrl?: string | null;
   @Input()

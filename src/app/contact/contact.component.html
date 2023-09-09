@@ -1,20 +1,19 @@
-<section id="contact">
+<section id="contact" [ngClass]="isSmallScreen ? 'small-contact' : 'large-contact'">
     <div class="title-container">
         <h1>Where to find me?</h1>
     </div>
-    <div class="contact-icons">
+    <div [ngClass]="isSmallScreen ? 'contact-small-icons' : 'contact-large-icons'">
         <a href="https://www.facebook.com/damianek.kaniewski/" target="_blank">
-            <img src="../../assets/images/facebookIcon.png" id="facebook" alt="facebook">
+            <img [id]="isSmallScreen ? 'facebook-small' : 'facebook-large'" src="assets/images/facebookIcon.png" alt="facebook">
         </a>
         <a href="https://www.linkedin.com/in/damian-kaniewski-43b008236/" target="_blank">
-            <img src="../../assets/images/linkedinIcon.png" id="linkedIn" alt="linkedIn">
+            <img [id]="isSmallScreen ? 'linkedIn-small' : 'linkedIn-large'" src="assets/images/linkedinIcon.png" alt="linkedIn">
         </a>
         <a href="https://github.com/damiankaniewski" target="_blank">
-            <img src="../../assets/images/githubIcon.png" id="github" alt="github">
+            <img [id]="isSmallScreen ? 'github-small' : 'github-large'" src="assets/images/githubIcon.png" alt="github">
         </a>
         <a href="mailto:damian.kaniewski@onet.pl" target="_blank">
-            <img src="../../assets/images/emailIcon.png" id="email" alt="email">
+            <img [id]="isSmallScreen ? 'email-small' : 'email-large'" src="assets/images/emailIcon.png" alt="email">
         </a>
     </div>
-
 </section>

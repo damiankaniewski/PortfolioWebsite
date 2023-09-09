@@ -1,61 +1,97 @@
-#contact {
+.large-contact {
     margin-top: 100px;
+    margin-bottom: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.title-container {
+.large-contact .title-container {
     display: flex;
     font-size: 100px;
 }
-.title-container h1 {
+.large-contact .title-container h1 {
     text-align: center;
     margin-top: 15px;    
     margin-bottom: 40px;
 }
 
-.contact-icons {
+.contact-large-icons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 65px;
+    margin-top: 60px;
     margin-bottom: 60px;
 }
 
-.contact-icons img {
+.contact-large-icons img {
     width: 250px;
     height: auto;
 }
 
-#facebook, #linkedIn, #github, #email {
+#facebook-large, #linkedIn-large, #github-large, #email-large {
     opacity: 50%;
     transform: scale(1.0);
     filter: grayscale(70%);
     transition: opacity 0.3s, transform 0.5s, filter 0.5s;
 }
 
-#facebook:hover {
+#facebook-large:hover {
     opacity: 100%;
     transform: scale(1.1);
     filter: grayscale(0%);
 }
 
-#linkedIn:hover {
+#linkedIn-large:hover {
     opacity: 100%;
     transform: scale(1.1);
     filter: grayscale(0%);
 }
 
-#github:hover{
+#github-large:hover{
     opacity: 100%;
     transform: scale(1.1);
     filter: grayscale(0%);
 }
 
-#email:hover {
+#email-large:hover {
     opacity: 100%;
     transform: scale(1.1);
     filter: grayscale(0%);
 }
 
+/* small */
+
+.small-contact {
+    margin-top: 100px;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.small-contact .title-container {
+    display: flex;
+}
+
+.small-contact .title-container h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;    
+    margin-bottom: 20px;
+}
+
+.contact-small-icons {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-small-icons img {
+    width: 130px;
+    height: auto;
+}

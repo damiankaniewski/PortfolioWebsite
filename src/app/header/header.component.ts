@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { ResponsiveService } from '../responsiveService/responsive.service';
 
 @Component({
   selector: 'app-header',
@@ -6,23 +7,43 @@ import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  activeSection: string | null = "home";
+  
+  constructor(private renderer: Renderer2, private el: ElementRef, private responsiveService: ResponsiveService) {}
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+  activeSection: string | null = "home";
+  isSmallScreen = false;
 
   ngOnInit() {
+    this.responsiveService.isSmallScreen$.subscribe(isSmall => {
+      this.isSmallScreen = isSmall;
+      console.log(isSmall);
+    });
+
+
     setTimeout(() => {
-      const textElement = document.querySelector('.left-links');
-      if(textElement){
-        textElement.classList.add('loaded');
+      if(this.isSmallScreen){
+        const textElement = document.querySelector('.links');
+        if(textElement){
+          textElement.classList.add('loaded');
+          }
+      }else{
+        const textElement = document.querySelector('.left-links');
+        if(textElement){
+          textElement.classList.add('loaded');
+          }
       }
+      
     }, 0);
-    setTimeout(() => {
-      const textElement = document.querySelector('.right-links');
-      if(textElement){
-        textElement.classList.add('loaded');
-      }
+
+    if(!this.isSmallScreen){
+      setTimeout(() => {
+        const textElement = document.querySelector('.right-links');
+        if(textElement){
+          textElement.classList.add('loaded');
+        }
     }, 500);
+    }
+    
 }
 
   scrollToSection(sectionId: string): void {

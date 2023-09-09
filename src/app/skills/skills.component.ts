@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Output, Renderer2 } from '@angular/core';
+import { ResponsiveService } from '../responsiveService/responsive.service';
 
 @Component({
   selector: 'app-skills',
@@ -6,11 +7,20 @@ import { Component, ElementRef, EventEmitter, Output, Renderer2 } from '@angular
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent {
+  constructor(private elementRef: ElementRef, private renderer: Renderer2, private responsiveService: ResponsiveService) {}
+
   inputValue: string = 'What are my skills?';
   showText: boolean = true;
   animating: boolean = false;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
+  isSmallScreen = false;
+
+  ngOnInit(){
+    this.responsiveService.isSmallScreen$.subscribe(isSmall => {
+      this.isSmallScreen = isSmall;
+      console.log(isSmall);
+    });
+  }
 
   onInputChange(event: Event) {
     const newValue = (event.target as HTMLInputElement).value;

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { ProjectsService } from '../projects/projects.service';
+import { ResponsiveService } from '../responsiveService/responsive.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,15 +8,22 @@ import { ProjectsService } from '../projects/projects.service';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
+
+  constructor(private portfolioService: ProjectsService, private responsiveService: ResponsiveService) { }
+
   projects: any[] = [];
   currentIndex = 0;
 
   isCardLoaded: boolean = true;
-
-  constructor(private portfolioService: ProjectsService) { }
+  isSmallScreen = false;
 
   ngOnInit(): void {
-    this.portfolioService.getProjects().subscribe(data => {
+    this.responsiveService.isSmallScreen$.subscribe(isSmall => {
+      this.isSmallScreen = isSmall;
+      console.log(isSmall);
+    });
+
+    this.portfolioService.getProjectsOffline().subscribe(data => {
       this.projects = data;
     });
   }

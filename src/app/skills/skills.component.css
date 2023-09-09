@@ -1,10 +1,10 @@
-.title{
+.large-skills .title{
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  input[type="text"] {
+  .large-skills input[type="text"] {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,14 +31,14 @@
   transition: opacity 2s ease-in-out;
 }
 
-.container {
+.large-skills .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 220px;
   margin-top: 150px;
 }
 
-.item {
+.large-skills .item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,12 +46,12 @@
   cursor: pointer;
 }
 
-.item:hover img{
+.large-skills .item:hover img{
   transform: scale(1.0);
   opacity: 0.3;
 }
 
-.item img{
+.large-skills .item img{
   width: 300px;
   height: auto; 
   transform: scale(0.9);
@@ -60,12 +60,12 @@
 }
 
 
-.item:hover h1 {
+.large-skills .item:hover h1 {
   opacity: 1;
 }
 
 
-.item h1 {
+.large-skills .item h1 {
   position: absolute;
   text-align: center;
   width: 500px;
@@ -73,7 +73,7 @@
   transition: opacity 0.5s;
 }
 
-.skill-level {
+.large-skills .skill-level {
   opacity: 1;
   display: flex;
   flex-direction: row;
@@ -82,12 +82,12 @@
   transition: transform 0.5s, opacity 0.5s;
 }
 
-.item:hover .skill-level{
+.large-skills .item:hover .skill-level{
   transform: scale(0.5);
   opacity: 0.2;
 }
 
-.level {
+.large-skills .level {
   background-color: white;
   width: 30px;
   height: 30px;
@@ -95,7 +95,7 @@
   border-radius: 100%;
 }
 
-.level-full {
+.large-skills .level-full {
   width: 30px;
   height: 30px;
   margin: 5px;
@@ -168,4 +168,71 @@
   font-size: 72px;
   text-align: center;
   font-weight: 100;
+}
+
+/* small screen */
+
+.small-skills .title {
+  font-size: 44px;
+  text-align: center;
+}
+
+.small-skills .container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.small-skills .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.small-skills .item img{
+  width: 300px;
+  height: auto; 
+}
+
+.small-skills .skill-level{
+  order: 2;
+  display: flex;
+  flex-direction: row;
+}
+
+.small-skills .level {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  margin: 15px 5px 5px 5px;
+  border-radius: 100%;
+}
+
+.small-skills .level-full {
+  width: 30px;
+  height: 30px;
+  margin: 15px 5px 5px 5px;
+  border-radius: 100%;
+}
+
+.small-skills .item h1{
+  order:3;
+  text-align: center;
+  margin: 35px 15px;
+  font-size: 20px;
+}
+
+.line {
+  margin-bottom: 30px;
+}
+
+.small-skills .additional h1{
+  font-size: 44px;
+}
+
+.small-skills .additional .img-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
