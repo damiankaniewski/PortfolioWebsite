@@ -101,6 +101,8 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .small-screen-content .links {

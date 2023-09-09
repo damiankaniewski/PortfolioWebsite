@@ -98,12 +98,14 @@
 
 .small-screen .main-title {
     opacity: 0;
+    margin: 0;
     transform: scale(0.8);
     transition: opacity 1s, transform 1s;
 }
 
 .small-screen .sub-title {
     opacity: 0;
+    margin: 0;
     transform: scale(0.8);
     transition: opacity 1s, transform 1s;
 }
@@ -115,7 +117,7 @@
 }
 .small-screen .image-container img {
     width: 80%;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 80px;
 }
 
@@ -131,7 +133,7 @@
 }
 
 .small-screen .sub-title.loaded {
-    font-size: 20px;
+    font-size: 18px;
     transform: scale(1);
     opacity: 1;
 }

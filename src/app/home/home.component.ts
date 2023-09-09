@@ -44,5 +44,6 @@ export class HomeComponent {
     const scrollY = window.scrollY;
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight;
-    this.scrolledPercentage = (scrollY / (documentHeight - windowHeight)) * 100; }
+    this.scrolledPercentage = (scrollY / (documentHeight - windowHeight)) * 100; 
+  }
 }

@@ -37,6 +37,13 @@
   filter: opacity(50%);
 }
 
+.large-about-section .about-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .large-about-section .about-item{
   display: flex;
   flex-direction: column;
@@ -44,6 +51,10 @@
   justify-content: center;
   text-align: center;
   margin-bottom: 100px;
+  padding: 25px;
+  width: 35%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 
 .large-about-section .about-item h1 {
@@ -89,7 +100,7 @@
   background-image: url("../../assets/images/CanaiSmall.png");
   background-size: cover;
   background-position: center;
-}
+} 
 
 .small-about-section .title{
   display: flex;
@@ -105,18 +116,29 @@
   margin: 5px 0 5px 0;
 }
 
+.small-about-section .about-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .small-about-section .about-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: 50px;
+  margin: 50px 0 50px 0;
+  padding: 25px;
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 
 .small-about-section .about-item h1{
   font-size: 48px;
-  margin: 55px 0 15px 0;
+  margin: 15px 0 15px 0;
 }
 
 .small-about-section .about-item p {
@@ -124,11 +146,11 @@
 }
 
 .small-about-section .logo {
-  width: 200px;
-  padding: 50px;
-  margin: 20px;
+  width: 160px;
+  padding: 30px;
   background-color: white;
-  border-radius: 15%;
+  border:rgba(0, 0, 0, 1);
+  border-radius: 25px;
 }
 
 .small-about-section .name {

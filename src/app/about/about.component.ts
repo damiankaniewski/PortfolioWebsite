@@ -9,6 +9,7 @@ import { ResponsiveService } from '../responsiveService/responsive.service';
 export class AboutComponent {
   constructor(private renderer: Renderer2, private el: ElementRef, private responsiveService: ResponsiveService) {}
   isSmallScreen = false;
+  scrolledPercentage = 0;
 
   ngOnInit(){
     this.responsiveService.isSmallScreen$.subscribe(isSmall => {
@@ -33,8 +34,21 @@ export class AboutComponent {
         movingImageContainer.style.transform = '';
         movingImageContainer.style.filter = 'grayscale(0)';
       }
+    } else {
+      const aboutSection = document.querySelector('#about');
+
+      if (aboutSection) {
+        const backgroundContainer = document.querySelector('.small-about-section') as HTMLElement;
+
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        this.scrolledPercentage = (scrollY / (documentHeight - windowHeight)) * 100; 
+
+        backgroundContainer.style.backgroundPositionX = `${-300-20*this.scrolledPercentage}px`;
+      }
     }
-    
+
     
   }
 }
