@@ -3,56 +3,83 @@
   justify-content: center;
   align-items: center;
   font-size: 128px;
+  margin-bottom: 200px;
+  background-color: #000000;
 }
 
-.container {
+.about-footer-large{
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-end;
-  background-image: url(../../assets/images/me-background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 100vh;
-  padding-top: 300px;
-  padding-bottom: 300px;
-  width: auto;
+  background-color: #000000;
+  height: 60px;
 }
 
-.game-development,
-.software-engineering,
-.web-development {
-  flex: 1;
-  text-align: center;
-  padding: 30px;
-  overflow: hidden;
+.large-about-section {
   position: relative;
-
-  opacity: 0;
-  transition: opacity 0.5s;
 }
 
+.moving-image-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width:100%;
+  z-index: -1;
+}
 
-.game-development img,
-.software-engineering img,
-.web-development img {
-  width: 50%;
-  max-width: 50%;
+.moving-image-container img{
+  max-width: 100%;
   height: auto;
-  padding-bottom: 50px;
+  display: block;
+  margin: 0 auto;
+  filter: opacity(50%);
 }
 
-/* Dodaj styl do paragrafów pod obrazkami */
-.game-development p,
-.software-engineering p,
-.web-development p {
-  margin-top: 10px; /* Dodaj odstęp między obrazkiem a tekstem */
-  font-size: 24px;
+.about-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 100px;
 }
 
-.game-development.animate,
-.software-engineering.animate,
-.web-development.animate {
-  opacity: 1;
+.about-item h1 {
+  font-size: 108px;
+  margin: 5px;
 }
+
+.about-item p {
+  margin: 5px;
+}
+
+.logo {
+  width: 300px;
+  padding: 50px;
+  margin: 50px;
+  background-color: white;
+  border-radius: 15%;
+}
+
+.line{
+  width: 20%;
+  margin: 25px 0 25px 0;
+}
+.name {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.date{
+  font-size: 32px;
+  font-style: italic;
+}
+
+.description {
+  font-size: 48px;
+  line-height: 2;
+}
+
+

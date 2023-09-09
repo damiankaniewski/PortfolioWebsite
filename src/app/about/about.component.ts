@@ -10,10 +10,6 @@ export class AboutComponent {
   constructor(private renderer: Renderer2, private el: ElementRef, private responsiveService: ResponsiveService) {}
   isSmallScreen = false;
 
-  isGameDevelopmentAnimated: boolean = false;
-  isSoftwareEngineeringAnimated: boolean = false;
-  isWebDevelopmentAnimated: boolean = false;
-
   ngOnInit(){
     this.responsiveService.isSmallScreen$.subscribe(isSmall => {
       this.isSmallScreen = isSmall;
@@ -22,19 +18,20 @@ export class AboutComponent {
   }
 
   @HostListener('window:scroll', ['$event'])
-  onScroll() {
-    // Sprawdzanie, czy strona jest wyśrodkowana na elementach
-    const elements: HTMLElement[] = this.el.nativeElement.querySelectorAll('.game-development, .software-engineering, .web-development');
-    const windowHeight = window.innerHeight;
+  onWindowScroll(event: Event): void {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const movingImageContainer = this.el.nativeElement.querySelector('.moving-image-container');
 
-    elements.forEach((element: HTMLElement) => {
-      const bounds = element.getBoundingClientRect();
-      if (bounds.top < windowHeight / 2 && bounds.bottom > windowHeight / 2) {
-        this.renderer.addClass(element, 'animate');
-      } else {
-        this.renderer.removeClass(element, 'animate');
-      }
-    });
+    if (scrollY > 0) {
+      const grayscaleValue = Math.min((scrollY / 2500) * 100, 100);
+
+      movingImageContainer.style.transform = `translateY(${scrollY / 2.5}px)`;
+      movingImageContainer.style.filter = `grayscale(${grayscaleValue}%)`;
+      console.log(`${movingImageContainer.style.filter}`);
+    } else {
+      movingImageContainer.style.transform = '';
+      movingImageContainer.style.filter = 'grayscale(0)';
+    }
+    
   }
-  
 }
