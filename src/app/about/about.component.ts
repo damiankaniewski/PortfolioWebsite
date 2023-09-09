@@ -19,19 +19,22 @@ export class AboutComponent {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: Event): void {
-    const scrollY = window.scrollY || window.pageYOffset;
-    const movingImageContainer = this.el.nativeElement.querySelector('.moving-image-container');
-
-    if (scrollY > 0) {
-      const grayscaleValue = Math.min((scrollY / 2500) * 100, 100);
-
-      movingImageContainer.style.transform = `translateY(${scrollY / 2.5}px)`;
-      movingImageContainer.style.filter = `grayscale(${grayscaleValue}%)`;
-      console.log(`${movingImageContainer.style.filter}`);
-    } else {
-      movingImageContainer.style.transform = '';
-      movingImageContainer.style.filter = 'grayscale(0)';
+    if(!this.isSmallScreen){
+      const scrollY = window.scrollY || window.pageYOffset;
+      const movingImageContainer = this.el.nativeElement.querySelector('.moving-image-container');
+  
+      if (scrollY > 0) {
+        const grayscaleValue = Math.min((scrollY / 2500) * 100, 100);
+  
+        movingImageContainer.style.transform = `translateY(${scrollY / 2.5}px)`;
+        movingImageContainer.style.filter = `grayscale(${grayscaleValue}%)`;
+        console.log(`${movingImageContainer.style.filter}`);
+      } else {
+        movingImageContainer.style.transform = '';
+        movingImageContainer.style.filter = 'grayscale(0)';
+      }
     }
+    
     
   }
 }

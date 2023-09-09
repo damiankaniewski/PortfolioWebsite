@@ -93,7 +93,7 @@
 /* small screen */
 
 .small-screen-content{
-    background-color: black;
+    background-color: #000000;
     transition: background-color 0.5s ease-in-out;
     padding: 15px 15px;
     position: fixed;

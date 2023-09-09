@@ -12,10 +12,15 @@
 .small-screen {
     background-color: white;
     color: black;
+    font-size: 12px;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     padding: 5px;
+}
+
+.small-screen p {
+    margin: 5px 15px 5px 15px;
 }
