@@ -10,7 +10,7 @@
   </div>
 </nav>
 
-<nav *ngIf="isSmallScreen" class="small-screen-content" [ngClass]="{'portfolio-active': activeSection === 'portfolio' || activeSection === 'contact'}">
+<nav *ngIf="isSmallScreen" class="small-screen-content" [ngClass]="{'portfolio-active': activeSection === 'portfolio' || activeSection === 'contact'}" >
   <div class="links">
     <a class="home" [class.active]="activeSection === 'home'" (click)="scrollToSection('home')"><i class="fa fa-home"></i></a>
     <a class="about" [class.active]="activeSection === 'about'" (click)="scrollToSection('about')"><i class="fa fa-user"></i></a>
