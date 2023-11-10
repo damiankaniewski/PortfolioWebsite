@@ -123,3 +123,12 @@
   transform: scale(1);
   opacity: 1;
 }
+
+.app-project-card{
+  opacity: 1;
+  transition: opacity 0.1s;
+}
+
+.photoChange{
+  opacity:0;
+}

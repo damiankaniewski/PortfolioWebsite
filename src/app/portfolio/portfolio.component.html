@@ -1,23 +1,5 @@
 <section *ngIf="!isSmallScreen" id="portfolio" class="portfolio">
-  <div class="title-container">
-    <h1 aria-label="My portfolio">
-      My&nbsp;<span class="typewriter"></span>
-    </h1>
-  </div>
-  <div class="projects-container">
-    <img class="left-button" src="assets/images/arrowleft.png" (click)="prevProject()">
-   
-    <div class="project-card" [ngClass]="{'loaded': isCardLoaded}">
-      <app-project-card
-      [photoUrl]="currentProject.photoUrl"
-      [name]="currentProject.name"
-      [description]="currentProject.description"
-      [videoUrl]="currentProject.videoUrl"
-      ></app-project-card>
-    </div>
 
-    <img class="right-button" src="assets/images/arrowright.png"  (click)="nextProject()">
-  </div>
 </section>
 
 <section *ngIf="isSmallScreen" id="portfolio" class="portfolio">

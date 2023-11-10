@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Output, Renderer2 } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, Renderer2, ViewChild } from '@angular/core';
 import { ResponsiveService } from '../responsiveService/responsive.service';
 
 @Component({
@@ -7,11 +7,11 @@ import { ResponsiveService } from '../responsiveService/responsive.service';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent {
-  constructor(private elementRef: ElementRef, private renderer: Renderer2, private responsiveService: ResponsiveService) {}
+  constructor(private responsiveService: ResponsiveService) {}
 
-  inputValue: string = 'What are my skills?';
-  showText: boolean = true;
-  animating: boolean = false;
+  showProgrammingText: boolean = false;
+  showDesignText: boolean = false;
+  showMusicText: boolean = false;
 
   isSmallScreen = false;
 
@@ -22,27 +22,95 @@ export class SkillsComponent {
     });
   }
 
-  onInputChange(event: Event) {
-    const newValue = (event.target as HTMLInputElement).value;
-
-    if (newValue !== 'What are my skills?' && !this.animating) { 
-      this.animating = true;
-
+  showText(section: string) {
+    let swap: Element | null;
+    if (section === 'programming') {
+      swap = document.querySelector(".programming-swap");
+      if(swap){
+        swap.classList.add("swap-active");
+      }
       setTimeout(() => {
-        this.showText = false;
-
-        setTimeout(() => {
-          this.inputValue = 'What are my skills?';
-          const inputElement = this.elementRef.nativeElement.querySelector('.title');
-          this.renderer.setProperty(inputElement, 'value', this.inputValue);
-
-          this.showText = true;
-
-          this.animating = false; 
-          inputElement.blur();
-        }, 2000);
-
-      }, 3000);
+        if(swap){
+          swap.classList.remove("swap-active");
+        }
+      },500)
+      setTimeout(() => {
+        this.showProgrammingText = true;
+      }, 500)
+    }
+    if (section === 'design') {
+      swap = document.querySelector(".design-swap");
+      if(swap){
+        swap.classList.add("swap-active");
+      }
+      setTimeout(() => {
+        if(swap){
+          swap.classList.remove("swap-active");
+        }
+      },500)
+      setTimeout(() => {
+        this.showDesignText = true;
+      }, 500)
+    }
+    if (section === 'music') {
+      swap = document.querySelector(".music-swap");
+      if(swap){
+        swap.classList.add("swap-active");
+      }
+      setTimeout(() => {
+        if(swap){
+          swap.classList.remove("swap-active");
+        }
+      },500)
+      setTimeout(() => {
+        this.showMusicText = true;
+      }, 500)
     }
   }
+
+  hideText(section: string) {
+    let swap: Element | null;
+    if (section === 'programming') {
+      swap = document.querySelector(".programming-swap");
+      if(swap){
+        swap.classList.add("swap-active");
+      }
+      setTimeout(() => {
+        if(swap){
+          swap.classList.remove("swap-active");
+        }
+      },500)
+      setTimeout(() => {
+        this.showProgrammingText = false;
+      }, 500)
+    }
+    if (section === 'design') {
+      swap = document.querySelector(".design-swap");
+      if(swap){
+        swap.classList.add("swap-active");
+      }
+      setTimeout(() => {
+        if(swap){
+          swap.classList.remove("swap-active");
+        }
+      },500)
+      setTimeout(() => {
+        this.showDesignText = false;
+      }, 500)
+    }
+    if (section === 'music') {
+      swap = document.querySelector(".music-swap");
+      if(swap){
+        swap.classList.add("swap-active");
+      }
+      setTimeout(() => {
+        if(swap){
+          swap.classList.remove("swap-active");
+        }
+      },500)
+      setTimeout(() => {
+        this.showMusicText = false;
+      }, 500)
+  }
+}
 }

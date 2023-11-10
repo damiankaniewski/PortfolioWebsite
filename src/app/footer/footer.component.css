@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding: 0 450px;
+    padding: 0 70px;
 }
 
 .small-screen {
@@ -23,4 +23,5 @@
 
 .small-screen p {
     margin: 5px 15px 5px 15px;
+    display: flex;
 }

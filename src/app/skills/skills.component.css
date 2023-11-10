@@ -1,247 +1,100 @@
-.large-skills{
-  background-color: #000000;
+.large-screen{
+  background-color: black;
 }
 
-
-.large-skills .title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .large-skills input[type="text"] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 128px;
-    font-weight: 100;
-    background-color: transparent;
-    color: white;
-    padding: 5px;
-    outline: none;
-    width: 100%;
-    box-sizing: border-box;
-    border: none;
-    box-shadow: none;
+#skills {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 100%;
+  overflow: hidden;
 }
 
-.show-text {
-  opacity: 1;
-  transition: opacity 3s ease-in-out;
+.image-container {
+  flex: 1;
 }
 
-.hide-text {
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
+.image-container img{
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  position: absolute;
 }
 
-.large-skills .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 220px;
-  margin-top: 150px;
-}
-
-.large-skills .item {
+.skills-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  color: white;
+  margin-right: 10%;
+  width: 30%;
+  z-index: 1;
+  height: 100%;
 }
 
-.large-skills .item:hover img{
-  transform: scale(1.0);
-  opacity: 0.3;
+.text-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.large-skills .item img{
-  width: 300px;
-  height: auto; 
-  transform: scale(0.9);
-  opacity: 1;
-  transition: transform 0.5s, opacity 0.5s;
+.content-swap{
+  width: 350px;
 }
 
-
-.large-skills .item:hover h1 {
-  opacity: 1;
-}
-
-
-.large-skills .item h1 {
-  position: absolute;
+.text-row p{
+  width: 100%;
+  font-size: 2.5vw;
   text-align: center;
-  width: 500px;
-  opacity: 0;
+}
+
+.programming-swap, .design-swap, .music-swap{
+  opacity: 1;
   transition: opacity 0.5s;
 }
 
-.large-skills .skill-level {
-  opacity: 1;
+.swap-active{
+  opacity: 0;
+}
+
+.logo-container{
   display: flex;
   flex-direction: row;
-  transform: scale(1.0);
-  opacity: 1;
-  transition: transform 0.5s, opacity 0.5s;
-}
-
-.large-skills .item:hover .skill-level{
-  transform: scale(0.5);
-  opacity: 0.2;
-}
-
-.large-skills .level {
-  background-color: white;
-  width: 30px;
-  height: 30px;
-  margin: 5px;
-  border-radius: 100%;
-}
-
-.large-skills .level-full {
-  width: 30px;
-  height: 30px;
-  margin: 5px;
-  border-radius: 100%;
-}
-
-.angular {
-  background-color: rgb(195,0,47);
-}
-
-.nest {
-  background-color: rgb(224, 35, 78);
-}
-
-.node {
-  background-color: rgb(104, 160, 99)
-}
-
-.cplusplus {
-  background-color: rgb(4, 79, 136);
-}
-
-.csharp {
-  background-color: rgb(161, 121, 220)
-}
-
-.unity {
-  background-color: rgb(88,88,88)
-}
-
-.java{
-  background-color: rgb(233, 140, 33);
-}
-
-.python {
-  background-color: rgb(55, 115, 165);
-}
-
-.ableton {
-  background-color: rgb(44,44,44)
-}
-
-.additional{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.img-container {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.additional img {
-  width: 150px;
-  height: auto;
-  padding: 20px;
-  transform: scale(1.0);
-  transition: transform 0.5s;
+.logo-image{
+  padding: 10px;
+  width: 90px;
+  height: 100%;
 }
 
-.additional img:hover {
-  transform: scale(1.2);
+#programming, #design, #music {
+  padding: 5%;
+  width: 40%;
+  filter: grayscale(1);
+  transform: scale(1.0);
+  transition: filter 1s, transform 1s ease-in-out;
+}
+
+#programming:hover{
+  filter: grayscale(0);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
-.additional h1{
-  margin-top: 100px;
-  font-size: 72px;
-  text-align: center;
-  font-weight: 100;
+#design:hover{
+  filter: grayscale(0);
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-/* small screen */
-.small-skills{
-  background-color: #000000;
+#music:hover{
+  filter: grayscale(0);
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-.small-skills .title {
-  font-size: 44px;
-  text-align: center;
-}
-
-.small-skills .container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-}
-
-.small-skills .item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.small-skills .item img{
-  width: 300px;
-  height: auto; 
-}
-
-.small-skills .skill-level{
-  order: 2;
-  display: flex;
-  flex-direction: row;
-}
-
-.small-skills .level {
-  background-color: white;
-  width: 30px;
-  height: 30px;
-  margin: 15px 5px 5px 5px;
-  border-radius: 100%;
-}
-
-.small-skills .level-full {
-  width: 30px;
-  height: 30px;
-  margin: 15px 5px 5px 5px;
-  border-radius: 100%;
-}
-
-.small-skills .item h1{
-  order:3;
-  text-align: center;
-  margin: 35px 15px;
-  font-size: 20px;
-}
-
-.line {
-  width: 100%;
-  margin-bottom: 30px;
-}
-
-.small-skills .additional h1{
-  font-size: 44px;
-}
-
-.small-skills .additional .img-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}

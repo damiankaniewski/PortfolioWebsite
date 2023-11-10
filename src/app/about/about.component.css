@@ -1,169 +1,80 @@
-.large-about-section .title{
-  display: flex;
-  justify-content: center;
+.between{
+  height: 50px;
+  background: white;
+}
+
+.large-about-section{
+  background-color: white;
+  color: black;
+}
+
+.header-text{
+  font-size: 7vw;
+  text-align: center;
+  padding: 25px 0 0 0;
+}
+
+.education {
+  display: grid;
+  grid-template-columns: 60% 40%;
   align-items: center;
-  font-size: 128px;
-  margin-bottom: 200px;
-  background-color: #000000;
+  padding: 5% 0 15% 0;
 }
 
-.large-about-section .about-footer-large{
-  display: flex;
-  background-color: #000000;
-  height: 60px;
-}
-
-.large-about-section {
-  position: relative;
-}
-
-.large-about-section .moving-image-container {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width:100%;
-  z-index: -1;
-}
-
-.large-about-section .moving-image-container img{
+.image img {
   max-width: 100%;
   height: auto;
-  display: block;
-  margin: 0 auto;
-  filter: opacity(50%);
 }
 
-.large-about-section .about-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.text {
+  width: 100%;
+}
+
+
+.text h4{
+  font-size: 2vw;
+  margin: 0;
+}
+.text h2{
+  color: darkgoldenrod;
+  font-size: 1vw;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.text h3{
+  font-size: 3vw;
+  font-weight: bold;
+  margin-top: 0;
+}
+.text p{
+  font-size: 1vw;
+}
+
+
+.text h2, h3, h4, p{
+  padding: 0 15% 0 15%;
+}
+
+
+.work {
+  display: grid;
+  grid-template-columns: 40% 60%;
   align-items: center;
+  justify-content: flex-end;
+  padding: 5% 0 15% 0;
+}
+.work .image {
+  margin-left: auto;
 }
 
-.large-about-section .about-item{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 100px;
-  padding: 25px;
-  width: 35%;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-}
 
-.large-about-section .about-item h1 {
-  font-size: 108px;
-  margin: 5px;
-}
-
-.large-about-section .about-item p {
-  margin: 5px;
-}
-
-.large-about-section .logo {
-  width: 300px;
-  padding: 50px;
-  margin: 50px;
-  background-color: white;
-  border-radius: 15%;
-}
-
-.large-about-section .line{
+.pklogo, .gplogo{
   width: 20%;
-  margin: 25px 0 25px 0;
-}
-.large-about-section .name {
-  font-size: 60px;
-  font-weight: bold;
+  transform: scale(1.0);
+  transition: transform 0.3s;
+  padding: 0 15% 0 15%;
 }
 
-.large-about-section .date{
-  font-size: 32px;
-  font-style: italic;
-}
-
-.large-about-section .description {
-  font-size: 48px;
-  line-height: 2;
-}
-
-
-/* small screen */
-
-.small-about-section{
-  background-image: url("../../assets/images/CanaiSmall.png");
-  background-size: cover;
-  background-position: center;
-} 
-
-.small-about-section .title{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 48px;
-  padding-bottom: 50px;
-  background-color: #000000;
-}
-
-.small-about-section .line{
-  width: 50%;
-  margin: 5px 0 5px 0;
-}
-
-.small-about-section .about-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.small-about-section .about-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 50px 0 50px 0;
-  padding: 25px;
-  width: 70%;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-}
-
-.small-about-section .about-item h1{
-  font-size: 48px;
-  margin: 15px 0 15px 0;
-}
-
-.small-about-section .about-item p {
-  margin: 5px;
-}
-
-.small-about-section .logo {
-  width: 160px;
-  padding: 30px;
-  background-color: white;
-  border:rgba(0, 0, 0, 1);
-  border-radius: 25px;
-}
-
-.small-about-section .name {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.small-about-section .date{
-  font-size: 16px;
-  font-style: italic;
-}
-
-.small-about-section .description {
-  font-size: 24px;
-  line-height: 2;
+.pklogo:hover, .gplogo:hover{
+  transform: scale(1.05);
 }

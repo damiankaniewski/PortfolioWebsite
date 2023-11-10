@@ -21,7 +21,7 @@ export class ProjectsService {
         name: 'UE5 game',
         description: 'game in a nearly future',
         videoUrl: 'https://youtu.be/bRrjj3ojuyQ',
-        photoUrl: 'https://picsum.photos/300'
+        photoUrl: 'assets/images/testWebsite.jpg'
       }
     ]);
   }
