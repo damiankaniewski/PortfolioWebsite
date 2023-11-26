@@ -1,4 +1,4 @@
-<section id="skills" [ngClass]="{'small-screen': isSmallScreen, 'large-screen': !isSmallScreen}">
+<section *ngIf="!isSmallScreen" id="skills" class="large-skill">
     <div class="image-container">
        <img src="assets/images/Canai.jpg" alt="canai">
     </div>
