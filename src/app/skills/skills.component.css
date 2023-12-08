@@ -6,8 +6,9 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  height: 100%;
+  height: 90vh;
   overflow: hidden;
+  margin-bottom: 200px;
 }
 
 .image-container {
@@ -16,8 +17,9 @@
 
 .image-container img{
   width: 100%;
-  height: 90%;
+  height: 100%;
   object-fit: cover;
+  object-position: left;
   position: absolute;
 }
 

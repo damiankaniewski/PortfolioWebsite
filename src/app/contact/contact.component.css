@@ -20,7 +20,7 @@
 .contact-large-icons {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 65px;
+    gap: 35px;
     margin-top: 60px;
     margin-bottom: 60px;
 }
@@ -31,17 +31,33 @@
 }
 
 #facebook-large, #linkedIn-large, #github-large, #email-large, #cv-large {
-    opacity: 50%;
+    opacity: 30%;
     transform: scale(1.0);
-    filter: grayscale(70%);
-    transition: opacity 0.3s, transform 0.5s, filter 0.5s;
+    filter: drop-shadow(0px 0px 0px black);
+    transition: opacity 0.5s, transform 0.5s, filter 2s;
 }
 
 #facebook-large:hover, #linkedIn-large:hover, #github-large:hover, #email-large:hover, #cv-large:hover {
     opacity: 100%;
     transform: scale(1.1);
-    filter: grayscale(0%);
 }
+
+#facebook-large:hover{
+    filter: drop-shadow(0px 0px 111px #4267B2);
+}
+#linkedIn-large:hover{
+    filter: drop-shadow(0px 0px 111px #0A66C2);
+}
+#github-large:hover{
+    filter: drop-shadow(0px 0px 111px #FFFFFF);
+}
+#email-large:hover{
+    filter: drop-shadow(0px 0px 111px #BB001B);
+}
+#cv-large:hover{
+    filter: drop-shadow(0px 0px 111px #FFFFFF);
+}
+
 
 
 /* small */
