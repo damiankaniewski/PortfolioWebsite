@@ -1,102 +1,63 @@
-.large-screen{
-  background-color: black;
-}
-
 #skills {
+  background-color: rgb(0, 0, 0);
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+}
+
+#image-container {
+  width: 50%;
   height: 90vh;
   overflow: hidden;
-  margin-bottom: 200px;
-}
-
-.image-container {
-  flex: 1;
-}
-
-.image-container img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left;
-  position: absolute;
-}
-
-.skills-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  margin-right: 10%;
-  width: 30%;
-  z-index: 1;
-  height: 100%;
-}
-
-.text-row{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.content-swap{
-  width: 350px;
-}
-
-.text-row p{
-  width: 100%;
-  font-size: 2.5vw;
   text-align: center;
 }
 
-.programming-swap, .design-swap, .music-swap{
-  opacity: 1;
-  transition: opacity 0.5s;
+#image-container img {
+  height: 100%;
+  width: auto;
 }
 
-.swap-active{
-  opacity: 0;
-}
-
-.logo-container{
+.table-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 50%;
 }
 
-.logo-image{
-  padding: 10px;
-  width: 90px;
-  height: 100%;
+.header {
+  width: 80%;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: left;
 }
 
-#programming, #design, #music {
-  padding: 5%;
-  width: 40%;
-  filter: grayscale(1);
-  transform: scale(1.0);
-  transition: filter 1s, transform 1s ease-in-out;
+.skills-list {
+  width: 80%;
+  font-size: 36px;
+  text-align: left;
 }
 
-#programming:hover{
-  filter: grayscale(0);
-  transform: scale(1.1);
-  cursor: pointer;
+.skills-list p {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  color: rgb(111, 111, 111);
+  transition: color 0.2s ease, padding-top 0.3s, padding-bottom 0.3s;/* Dodanie przejścia dla płynnego efektu */
 }
 
-#design:hover{
-  filter: grayscale(0);
-  transform: scale(1.1);
-  cursor: pointer;
+.skills-list p:hover {
+  font-weight: bold;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-#music:hover{
-  filter: grayscale(0);
-  transform: scale(1.1);
-  cursor: pointer;
+.active {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.invisible {
+  opacity: 0;
 }
 

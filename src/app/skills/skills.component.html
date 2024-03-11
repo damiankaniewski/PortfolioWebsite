@@ -1,40 +1,18 @@
 <section *ngIf="!isSmallScreen" id="skills" class="large-skill">
-    <div class="image-container">
-       <img src="assets/images/Canai.jpg" alt="canai">
+    <div id="image-container">
+      <img [src]="imagePath" alt="Damian Kaniewski">
     </div>
-    <div class="skills-container">
-        <div class="text-row">
-            <div class="programming-swap">
-                <p *ngIf="!showProgrammingText">Programming</p>
-                <div *ngIf="showProgrammingText" class="logo-container">
-                    <img src="assets/images/csharplogo.png" alt="csharp" class="logo-image">
-                    <img src="assets/images/unitylogo.png" alt="unity" class="logo-image">
-                    <img src="assets/images/angularlogo.png" alt="angular" class="logo-image">
-                </div>
-            </div>
-            <img src="assets/icons/settings-color.png" alt="programming" id="programming" (mouseover)="showText('programming')" (mouseout)="hideText('programming')">
-        </div>
-        <div class="text-row">
-            <div class="design-swap">
-                <p *ngIf="!showDesignText">Design</p>
-                <div *ngIf="showDesignText" class="logo-container">
-                    <img src="assets/images/blenderlogo.png" alt="blender" class="logo-image">
-                    <img src="assets/images/figmalogo.png" alt="figma" class="logo-image">
-                    <img src="assets/images/photoshoplogo.png" alt="photoshop" class="logo-image">
-                </div>
-            </div>
-            <img src="assets/icons/design-thinking-color.png" alt="design" id="design" (mouseover)="showText('design')" (mouseout)="hideText('design')">
-        </div>
-        <div class="text-row">
-            <div class="music-swap">
-                <p *ngIf="!showMusicText">Music</p>
-                <div *ngIf="showMusicText" class="logo-container">
-                    <img src="assets/images/abletonlogo.png" alt="ableton" class="logo-image">
-                    <img src="assets/images/flstudiologo.png" alt="flstudio" class="logo-image">
-                </div>
-            </div>
-            <img src="assets/icons/music-note-color.png" alt="music" id="music" (mouseover)="showText('music')" (mouseout)="hideText('music')">
-        </div>
+    <div class="table-container">
+      <div class="header">
+        <p>What Sets Me Apart?</p>
+      </div>
+      <div class="skills-list" (mouseleave)="onSkillHover('')">
+        <p (mouseenter)="onSkillHover('Angular')">Angular/TypeScript</p>
+        <p (mouseenter)="onSkillHover('HTML')">HTML/CSS</p>
+        <p (mouseenter)="onSkillHover('Firebase')">Google Firebase</p>
+        <p (mouseenter)="onSkillHover('C#')">C# programming language</p>
+        <p (mouseenter)="onSkillHover('Blender')">Blender</p>
+        <p (mouseenter)="onSkillHover('Ableton')">Ableton</p>
+      </div>
     </div>
 </section>
-

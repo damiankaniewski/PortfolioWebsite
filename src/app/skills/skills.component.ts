@@ -1,20 +1,17 @@
-import { Component, ElementRef, EventEmitter, Output, Renderer2, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ResponsiveService } from '../responsiveService/responsive.service';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.css']
+  styleUrls: ['./skills.component.css'],
 })
 export class SkillsComponent {
   constructor(private responsiveService: ResponsiveService) {}
 
-  showProgrammingText: boolean = false;
-  showDesignText: boolean = false;
-  showMusicText: boolean = false;
-
   isSmallScreen = false;
 
+  imagePath: string = 'assets/images/me.jpg';
   ngOnInit(){
     this.responsiveService.isSmallScreen$.subscribe(isSmall => {
       this.isSmallScreen = isSmall;
@@ -22,95 +19,40 @@ export class SkillsComponent {
     });
   }
 
-  showText(section: string) {
-    let swap: Element | null;
-    if (section === 'programming') {
-      swap = document.querySelector(".programming-swap");
-      if(swap){
-        swap.classList.add("swap-active");
-      }
+  onSkillHover(skill: string): void {
+    const imageElement = document.getElementById('image-container');
+    if (imageElement) {
+      imageElement.classList.add('active');
+      imageElement.classList.add('invisible');
       setTimeout(() => {
-        if(swap){
-          swap.classList.remove("swap-active");
+        if (imageElement) {
+          switch (skill) {
+            case 'Angular':
+              this.imagePath = 'assets/skills/AngularSkills.jpg';
+              break;
+            case 'HTML':
+              this.imagePath = 'assets/skills/htmlSkills.jpg';
+              break;
+            case 'Firebase':
+              this.imagePath = 'assets/skills/firebaseSkills.jpg';
+              break;
+            case 'C#':
+              this.imagePath = 'assets/skills/Csharpskills.jpg';
+              break;
+            case 'Blender':
+              this.imagePath = 'assets/skills/blenderSkills.jpg';
+              break;
+            case 'Ableton':
+                this.imagePath = 'assets/skills/abletonSkills.jpg';
+                break;
+            default:
+              this.imagePath = 'assets/images/me.jpg';
+              break;
+          }
         }
-      },500)
-      setTimeout(() => {
-        this.showProgrammingText = true;
-      }, 500)
+        imageElement.classList.remove('invisible');
+      }, 200);
     }
-    if (section === 'design') {
-      swap = document.querySelector(".design-swap");
-      if(swap){
-        swap.classList.add("swap-active");
-      }
-      setTimeout(() => {
-        if(swap){
-          swap.classList.remove("swap-active");
-        }
-      },500)
-      setTimeout(() => {
-        this.showDesignText = true;
-      }, 500)
-    }
-    if (section === 'music') {
-      swap = document.querySelector(".music-swap");
-      if(swap){
-        swap.classList.add("swap-active");
-      }
-      setTimeout(() => {
-        if(swap){
-          swap.classList.remove("swap-active");
-        }
-      },500)
-      setTimeout(() => {
-        this.showMusicText = true;
-      }, 500)
-    }
+  
   }
-
-  hideText(section: string) {
-    let swap: Element | null;
-    if (section === 'programming') {
-      swap = document.querySelector(".programming-swap");
-      if(swap){
-        swap.classList.add("swap-active");
-      }
-      setTimeout(() => {
-        if(swap){
-          swap.classList.remove("swap-active");
-        }
-      },500)
-      setTimeout(() => {
-        this.showProgrammingText = false;
-      }, 500)
-    }
-    if (section === 'design') {
-      swap = document.querySelector(".design-swap");
-      if(swap){
-        swap.classList.add("swap-active");
-      }
-      setTimeout(() => {
-        if(swap){
-          swap.classList.remove("swap-active");
-        }
-      },500)
-      setTimeout(() => {
-        this.showDesignText = false;
-      }, 500)
-    }
-    if (section === 'music') {
-      swap = document.querySelector(".music-swap");
-      if(swap){
-        swap.classList.add("swap-active");
-      }
-      setTimeout(() => {
-        if(swap){
-          swap.classList.remove("swap-active");
-        }
-      },500)
-      setTimeout(() => {
-        this.showMusicText = false;
-      }, 500)
-  }
-}
 }

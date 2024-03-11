@@ -1,32 +1,3 @@
 <section *ngIf="!isSmallScreen" id="portfolio" class="portfolio">
-  <div class="title-container">
-    <p class="title-text">My portfolio</p>
-  </div>
-  <div class="portfolio-card">
-    <div class="arrows">
-      <img src="assets/images/arrowleft.png" alt="Left Arrow" (click)="changeItem('left')">
-      <img src="assets/images/arrowright.png" alt="Right Arrow" (click)="changeItem('right')">
-    </div>
-    <div class="changeable">
-      <div id="portfolioItem" [ngClass]="{ 'fade-in': shouldFadeIn, 'fade-out': shouldFadeOut }">
-        <img [src]="currentItem.image" [alt]="currentItem.title" class="portfolio-card-image">
-      </div>
-    </div>
-    <div class="object-info" [ngClass]="{ 'fade-in': shouldFadeIn, 'fade-out': shouldFadeOut }">
-      <div class="text">
-        <h1 class="object-title">{{ currentItem.title }}</h1>
-        <p class="object-description">{{ currentItem.description }}</p>
-      </div>
-      <div class="link">
-        <a [href]="currentItem.githubLink" target="_blank">
-          <img src="assets/images/githubIcon.png" alt="GitHub">
-        </a>
-      </div>
-      <div class="link" *ngIf="currentItem.additionalLink !== ''">
-        <a [href]="currentItem.additionalLink" target="_blank">
-          <img [src]="currentItem.linkIcon" alt="link">
-        </a>
-      </div>
-    </div>
-  </div>
+  work in progress
 </section>

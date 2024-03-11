@@ -9,7 +9,8 @@
 
 .large-contact .title-container {
     display: flex;
-    font-size: 100px;
+    margin-top: 50px;
+    font-size: 72px;
 }
 .large-contact .title-container h1 {
     text-align: center;
@@ -18,26 +19,26 @@
 }
 
 .contact-large-icons {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 35px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
     margin-top: 60px;
     margin-bottom: 60px;
 }
 
 .contact-large-icons img {
-    width: 15vw;;
+    width: 12vw;
     height: auto;
 }
 
-#facebook-large, #linkedIn-large, #github-large, #email-large, #cv-large {
+#facebook-large, #linkedIn-large, #github-large, #art-large, #email-large, #cv-large {
     opacity: 30%;
     transform: scale(1.0);
     filter: drop-shadow(0px 0px 0px black);
     transition: opacity 0.5s, transform 0.5s, filter 2s;
 }
 
-#facebook-large:hover, #linkedIn-large:hover, #github-large:hover, #email-large:hover, #cv-large:hover {
+#facebook-large:hover, #linkedIn-large:hover, #github-large:hover, #art-large:hover, #email-large:hover, #cv-large:hover {
     opacity: 100%;
     transform: scale(1.1);
 }
@@ -51,8 +52,11 @@
 #github-large:hover{
     filter: drop-shadow(0px 0px 111px #FFFFFF);
 }
-#email-large:hover{
-    filter: drop-shadow(0px 0px 111px #BB001B);
+#facebook-large:hover{
+    filter: drop-shadow(0px 0px 111px #4267B2);
+}
+#art-large:hover{
+    filter: drop-shadow(0px 0px 111px #32beee);
 }
 #cv-large:hover{
     filter: drop-shadow(0px 0px 111px #FFFFFF);
